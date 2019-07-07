@@ -1,0 +1,3 @@
+ .\keytool.exe -importkeystore -srckeystore d:\\temp\\ssl-server.jks -destkeystore D:\apps\java\jdk-11\lib\security\cacerts -srcstorepass changeit -srcalias selfsigned_localhost_sslserver -deststoretype pkcs12 -srcstoretype jks
+ 
+ keytool -importkeystore -srckeystore D:\apps\java\jdk-11\lib\security\cacerts -destkeystore D:\apps\java\jdk-11\lib\security\cacerts -deststoretype pkcs12

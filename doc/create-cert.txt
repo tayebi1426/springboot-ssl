@@ -1,0 +1,1 @@
+ keytool -genkeypair -keystore local-server-cert.keystore -dname "CN=localhost, OU=demisco-unit, O=demisco, L=esfahan, ST=esfahan, C=ir" -keypass pass#123 -storepass pass#123 -keyalg RSA -alias local-server-alias -ext SAN=dns:localhost,ip:127.0.0.1 -storetype PKCS12

@@ -1,0 +1,1 @@
+keytool.exe -importkeystore -srckeystore .\ssl-server.jks  -destkeystore .\cacerts-pkcs12 -srcstorepass changeit -srcalias selfsigned-cert -deststoretype pkcs12 -srcstoretype jks

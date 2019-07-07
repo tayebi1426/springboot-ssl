@@ -1,0 +1,14 @@
+The steps to install a new certificate into the Java default truststore are:
+
+extract cert from server: openssl s_client -connect server:443
+import certificate into truststore using keytool: keytool -import -alias alias.server.com -keystore $JAVA_HOME/jre/lib/security/cacerts
+
+ .\keytool.exe -importkeystore -srckeystore d:\\temp\\ssl-server.jks -destkeystore D:\apps\java\jdk-11\lib\security\cacerts -srcstorepass changeit -srcalias selfsigned_localhost_sslserver -deststoretype pkcs12 -srcstoretype jks
+
+
+keytool -trustcacerts \
+    -keystore $JAVA_HOME/jre/lib/security/cacerts \
+    -storepass changeit \
+    -noprompt \
+    -importcert \
+    -file isrgrootx1.der

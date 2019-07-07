@@ -1,0 +1,31 @@
+create keypair :
+    keytool -genkeypair -keystore local-server-cert.keystore -dname "CN=localhost, OU=demisco-unit, O=demisco, L=esfahan, ST=esfahan, C=ir" -keypass pass#123 -storepass htb98980 -keyalg RSA -alias local-server-alias -ext SAN=dns:localhost,ip:127.0.0.1 -storetype PKCS12
+
+	export certificate :
+		keytool -export -keystore d:\local-server-cert.keystore -alias local-server-alias -file local-server.crt
+
+		import certificate :
+		keytool -import -keystore client-truststore.keystore -file local-server.crt
+		
+  import key to cacert java :
+    keytool.exe -importkeystore -srckeystore .\local-serv-keystore -destkeystore d:\apps\java\openjdk-12\lib\security\cacerts -srcstorepass pass#123 -srcalias local-server-key
+
+ print :
+  keytool.exe -list -v -keystore .\local-cert-pkcs12
+  
+   print list cert in java :
+    keytool -list -v -cacerts > out.txt
+    keytool.exe -list -v -keystore java_home\lib\security\cacerts > out.txt
+   
+    convert java cacert :
+     keytool.exe -importkeystore -srckeystore D:\apps\java\jdk-11\lib\security\cacerts -destkeystore D:\apps\java\jdk-11\lib\security\cacerts -deststoretype pkcs12
+
+	 
+	 
+
+  
+     
+	  
+	 
+	  
+	 
